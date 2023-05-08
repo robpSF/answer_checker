@@ -7,7 +7,7 @@ import pandas as pd
 
 def convert_df(df):
     # IMPORTANT: Cache the conversion to prevent computation on every rerun
-    return df.to_csv(index=False, line_terminator='\r\n').encode('utf-8')
+    return df.to_csv(index=False, lineterminator='\r\n').encode('utf-8')
 
 
 sl.sidebar.write("___________________")
