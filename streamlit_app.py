@@ -74,6 +74,6 @@ if go:
     sl.download_button(
         label="Download data as CSV",
         data=csv,
-        file_name="wrong answers",
+        file_name="wrong answers.csv",
         mime='text/csv',
     )
