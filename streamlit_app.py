@@ -60,8 +60,14 @@ if go:
                         sl.write("They answered: "+wrong_answer_text)
                         sl.write("Correct answer was: " + correct_answer_text)
 
-                        output_df = output_df.append({'email': email, 'question': question_text, 'answer_given': wrong_answer_text,
-                                        'correct_answer': correct_answer_text}, ignore_index=True)
+                        # streamlit cloud didnt like this command
+                        #output_df = output_df.append({'email': email, 'question': question_text, 'answer_given': wrong_answer_text,
+                        #                'correct_answer': correct_answer_text}, ignore_index=True)
+                        
+                        output_df = pd.concat([output_df, pd.DataFrame({'email': [email],
+                                                          'question': [question_text],
+                                                          'answer_given': [wrong_answer_text],
+                                                          'correct_answer': [correct_answer_text]})])
 
     sl.write(output_df)
     csv = convert_df(output_df)
